@@ -24,6 +24,12 @@ dropzone.ondrop = function(evt){
 	return false;
 }
 
+var upload = document.getElementById('upload');
+upload.addEventListener('change', handleFileSelect, true);
+ function handleFileSelect() {
+    var file = upload.files[0]; 
+    displayImg(file);
+}
 function displayImg(file){
 	var canvas1 = document.getElementById('canvas1');
 	var context = canvas1.getContext("2d");
@@ -34,7 +40,7 @@ function displayImg(file){
 	reader.onload = function(finishedFile){
 		image.src = finishedFile.target.result;
 		image.onload = function(){		
-		context.imageSmoothingEnabled = false;
+				context.imageSmoothingEnabled = false;
 		context.drawImage(image, 0, 0, image.width, image.height, 0, 0, canvas1.width, canvas1.height);
 		};
 		image.onerror = function(){
