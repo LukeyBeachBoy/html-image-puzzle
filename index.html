@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Juego</title>
+	<meta name="viewport"content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		*{box-sizing: border-box;}
+
+		body{
+		font-family:sans-serif;
+		background-color: #4E4E4E;
+		min-width: 320px;
+		margin:0 auto;
+		display: flex;
+		flex-direction: column;
+		}
+		#content{
+		display: flex;
+		flex-direction: column;
+		}
+		header{
+		padding:.1em; text-align:center; background-color: #B7B7B7
+		}
+		header>div{
+		display: inline-flex; 
+		align-items:center; 
+		margin:0 auto;
+		}
+		h1{
+		font-weight: lighter; color:#FFFFFF;
+		}
+		h3{
+		margin:0;
+		color:#545454;
+		}
+		#footer{
+			background-color: #B21C1C;
+			width:100%;
+			text-align: center;
+		}
+		canvas{
+			width:360px;
+			height: 240px;
+			margin:0 auto;
+			border: 1px solid black;
+			background-color:#FFFFFF;
+		}
+		.canvasDiv{
+			margin:0 auto;
+			text-align: center;
+			padding:.5em;
+		}
+		#imgSelect{
+		display: inline-flex;
+		flex-direction: column;
+		align-items: center;
+		}
+		#gameCanvas{
+		display: inline-flex;
+		flex-direction: column;
+		}
+		.hover{
+			background-color: #C2E0FD;
+		}
+		input{
+			display: inline-block;
+			width:15em;
+		}
+	</style>
+</head>
+<body>
+	<div id ="content">
+	<header>
+		<div>
+		<img src="logotipo.png" style="max-width: 50%; height:2.5em"/>
+		<h1>Juego del puzzle</h1></div>
+		<h3>Un juego en el que se necesita arreglar sus fotos favoritas</h3>
+	</header>
+	<div id ="imgSelect" class = "canvasDiv">
+	<h1>Seleccionar imagen</h1>
+	<canvas id ="canvas1"></canvas>
+	<input type="file" id="upload">
+	</div>
+	<div id ="gameCanvas" class = "canvasDiv">
+	<h1>Solucionarlo</h1>
+	<canvas id ="canvas2"></canvas>
+	</div>
+	</div>
+	<div id="footer">
+		<p>&copy; <strong>PCW</strong> <time datetime="2018-05">febrero 2018</time></p> <p><a href="acerca.html">Información de contacto</a></p>
+	</div>
+</body>
+<script src="puzzle.js">
+</script>
+</html>
