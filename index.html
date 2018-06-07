@@ -22,7 +22,7 @@
 		header{
 		padding:.1em;
 		text-align:center;
-		background-color: #B7B7B7;
+		background-color: #FF0000;
 		min-width: 384px;
 		}
 		header>div{
@@ -35,10 +35,10 @@
 		}
 		h3{
 		margin:0;
-		color:#545454;
+		color:#323232;
 		}
 		#footer{
-			background-color: #B21C1C;
+			background-color: #EAEAEA;
 			width:100%;
 			text-align: center;
 			min-width: 384px;
@@ -58,6 +58,11 @@
 		flex-direction: column;
 		align-items: center;
 		}
+		#imgSelect>div{
+			width: 100%;
+			background-color: #FF4747;
+			border:4px solid black;
+		}
 		#gameCanvas{
 		display: inline-flex;
 		flex-direction: column;
@@ -69,6 +74,13 @@
 			margin:.5em;
 			display: inline-block;
 			width:15em;
+		}
+		.controls{
+			display: inline-flex;
+			align-items: baseline;
+			justify-content: space-around;
+			background-color: #FF4747;
+			border:4px solid black;
 		}
 	</style>
 </head>
@@ -83,11 +95,18 @@
 	<div id ="imgSelect" class = "canvasDiv">
 	<h1>Seleccionar imagen</h1>
 	<canvas id ="canvas1" width =360 height = 240></canvas>
-	<input type="file" id="upload">
+	<div>
+	<input type="file" accept="image/*" id="upload">
+	</div>
 	</div>
 	<div id ="gameCanvas" class = "canvasDiv">
 	<h1>Solucionarlo</h1>
 	<canvas id ="canvas2" width =360 height = 240></canvas>
+	<div class="controls"><label for="colorSelect">Color de línea</label><input type="color" id="colorSelect" style="width:40px"><label for="difficulty">Elegir Dificultad</label><select name="difficulty" id="difficulty">
+			<option value="easy">Fácil</option>
+			<option value="medium">Medio</option>
+			<option value="hard">Difícil</option>
+		</select></div>
 	</div>
 	</div>
 	<div id="footer">
