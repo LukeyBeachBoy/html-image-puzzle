@@ -77,10 +77,31 @@
 		}
 		.controls{
 			display: inline-flex;
+			flex-direction: column;
 			align-items: baseline;
-			justify-content: space-around;
 			background-color: #FF4747;
 			border:4px solid black;
+		}
+		.controls>div{
+			display: flex;
+   	 		align-items: center;
+    		margin: auto;
+		}
+		.controls>div>select{
+			margin-left:5px;
+		}
+		.controls>div>button{
+			margin: 0 10px 10px;
+		}
+		.timeDiv{
+			background-color: #FF4747;
+			border:4px solid black;
+		}
+		.timeDiv>p{
+			display: inline-block;
+		}
+		#timer{
+			margin-bottom: 0;
 		}
 	</style>
 </head>
@@ -101,12 +122,21 @@
 	</div>
 	<div id ="gameCanvas" class = "canvasDiv">
 	<h1>Solucionarlo</h1>
+	<div class="timeDiv">
+		<h3>Time taken</h3><p id="hour">0<p>h</p></p><p>:</p><p id="minute">0</p><p>m</p><p>:</p><p id="second">0</p><p>s</p>
+	</div>
 	<canvas id ="canvas2" width =360 height = 240></canvas>
-	<div class="controls"><label for="colorSelect">Color de línea</label><input type="color" id="colorSelect" style="width:40px"><label for="difficulty">Elegir Dificultad</label><select name="difficulty" id="difficulty">
+	<div class="controls"><div><label for="colorSelect">Color de línea</label><input type="color" id="colorSelect" style="width:40px" onchange="update()"><label for="difficulty">Elegir Dificultad</label><select name="difficulty" id="difficulty" onchange="update()">
 			<option value="easy">Fácil</option>
 			<option value="medium">Medio</option>
 			<option value="hard">Difícil</option>
 		</select></div>
+		<div>
+			<button id="start" onclick="shufflePuzzle()">Empezar</button>
+			<button id="stop" onclick="endTimer()">Terminar</button>
+			<button id="help">Ayuda</button>
+		</div>
+	</div>
 	</div>
 	</div>
 	<div id="footer">
