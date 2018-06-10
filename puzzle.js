@@ -16,7 +16,12 @@ var helpShown;
 var isStarted;
 var _mouse;
 
+//RESTART GAME ON CLOSE MODAL//
+winClose = document.getElementsByClassName('winClose')[0];
+endClose = document.getElementsByClassName('endClose')[0];
 
+winClose.addEventListener('click', update);
+endClose.addEventListener('click', update);
 
 // DEFAULT TEXT //
 
@@ -117,6 +122,7 @@ col.disabled = false;
 stop = document.getElementById('stop');
 stop.disabled = true;
 moves = 0;
+document.getElementById('moves').innerText=moves;
 isStarted = false;
 context2.drawImage(canvas1, 0, 0, canvas2.width, canvas2.height);
 document.getElementById('incorrectTiles').innerHTML=0;
@@ -374,7 +380,7 @@ function increaseMoves(){
 }
 
 function resetPuzzleAndCheckWin(){
-
+    canvas2.onmouseover= null;
     context2.clearRect(0,0,_puzzleWidth,_puzzleHeight);
     var gameWin = true;
     var i;
