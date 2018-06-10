@@ -2,16 +2,95 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Juego</title>
+	<title>Acerca</title>
+	<link rel="icon" type="image/png" href="ico.png">
 	<meta name="viewport"content="width=device-width, initial-scale=1.0">
-</head>
-<body style="background-color: #4E4E4E;overflow: hidden; margin:0 auto;">
-	<header style="padding:.5em; text-align:center; background-color: #B7B7B7;">
+	<style>
+	*{box-sizing: border-box;}
 
-		<div style="display: inline-flex; align-items:center; margin:0 auto">
-		<a href="index.html"><img src="logotipo.png" style="display: block; height:2.5em"/></a>
-		<h1 style="font-family: sans-serif; font-weight: lighter; color:#FFFFFF">Juego del puzzle</h1></div>
+		body{
+		font-family:sans-serif;
+		background-color: #4E4E4E;
+		min-width: 388px;
+		margin:0 auto;
+		display: flex;
+		flex-direction: column;
+		}
+		#content{
+		background-color:#F3F3F3;
+		display: flex;
+		flex-direction: column;
+		}
+		header{
+		padding;
+		text-align:center;
+		background-color: #FF0000;
+		}
+		#information{
+			display: flex;
+			flex-direction: column;
+			margin:auto;
+			text-align: center;
+		}
+		header>div{
+		display: inline-flex; 
+		align-items:center; 
+		margin:0 auto;
+		}
+		h1{
+		font-weight: lighter; color:#FFFFFF;
+		margin:5px;
+		}
+		h3{
+		margin:0;
+		color:#323232;
+		}
+		h4{
+		margin:0 auto;
+		width:70%;
+		text-align: justify;
+		}
+		ul{
+			margin:0;
+			padding:2em;
+		}
+		li{
+			margin:.6em;
+		}
+		#footer{
+			background-color: #EAEAEA;
+			width:100%;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id ="content">
+	<header>
+		<div>
+		<a href="index.html"><img src="logotipo.png" style="max-width:100%;height:2.5em" alt = "Lógotipo"/></a>
+		<h1>Juego del puzzle</h1></div>
+		<h3>Un juego en el que se necesita arreglar sus fotos favoritas</h3>
 	</header>
+	<div id="information">
+		<h2>Autor: Luke Beach (DNI 519671385)</h2>
+		<h2>Información de desarollo</h2>
+		<h3>Problemas:</h3>
+		<ul>
+		<li><h4>Tuve problemas de crear piezas a partir de la imagen original que el usuario cargó. Esto se debe a que la imagen tenga un tamaño mayor que el lienzo, aunque se reduzca para adaptarse. Después de muchas horas, decidí usar la imagen dibujada en el lienzo de vista previa para tomar los datos de píxel.</h4></li>
+		<li>
+				<h4>Otro problema es que, cuando el usuario mueve una pieza, y hace clic en la misma pieza sin moverla. Regresa a su posición original. No sé como solverlo</h4>
+			</li>	
+
+		</ul>
+		
+	</div>
 	
+	</div>
+	<div id="footer">
+		<p>&copy; <strong>PCW</strong> <time datetime="2018-05">febrero 2018</time></p> <p><a href="index.html">Volver a incio</a></p>
+	</div>
+	<script src="puzzle.js"></script>
+	<script src="stopwatch.js"></script>
 </body>
 </html>
